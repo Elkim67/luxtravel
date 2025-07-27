@@ -1,0 +1,935 @@
+/* Variables CSS pour une gestion facile des couleurs, des tailles, etc. */
+:root {
+  --primary-color: #0d6efd; /* Bleu primaire */
+  --primary-color-dark: #0a58ca; /* Bleu plus foncé pour les interactions */
+  --secondary-color: #f8f9fa; /* Gris clair secondaire */
+  --text-dark: #343a40; /* Couleur de texte foncée */
+  --text-light: #6c757d; /* Couleur de texte plus claire */
+  --white: #ffffff; /* Blanc pur */
+  --black: #000000; /* Noir pur */
+  --light-grey: #e9ecef; /* Gris très clair */
+  --heading-font: "Poppins", sans-serif; /* Police pour les titres */
+  --body-font: "Inter", sans-serif; /* Police pour le corps du texte */
+  --max-width: 1200px; /* Largeur maximale du contenu */
+  --header-height: 80px; /* Hauteur de l'en-tête */
+  --section-padding-desktop: 5rem 2rem; /* Padding des sections sur desktop */
+  --section-padding-mobile: 3rem 1.25rem; /* Padding des sections sur mobile */
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre légère pour les cartes */
+}
+
+/* Réinitialisation de base et styles globaux */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Défilement doux */
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--text-dark);
+  background-color: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Styles utilitaires généraux */
+.section__container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--section-padding-desktop); /* Par défaut pour desktop */
+}
+
+.section__header {
+  font-size: 3rem; /* Par défaut pour desktop */
+  font-family: var(--heading-font);
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section__description {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  text-align: center;
+  max-width: 700px;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+/* --- Navigation Bar (Desktop First) --- */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--white);
+  box-shadow: var(--card-shadow);
+  z-index: 999;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem; /* Padding pour desktop */
+}
+
+.nav__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto; /* La largeur est gérée par le contenu */
+}
+
+.nav__logo .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.nav__logo .logo span {
+  color: var(--primary-color);
+}
+
+.nav__menu__btn {
+  font-size: 2rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: none; /* Masqué par défaut sur desktop */
+}
+
+.nav__links {
+  list-style: none;
+  display: flex; /* En ligne sur desktop */
+  gap: 2rem; /* Espacement entre les liens */
+  transform: translateY(0); /* Visible par défaut sur desktop */
+  background-color: transparent; /* Pas de fond sur desktop */
+  box-shadow: none; /* Pas d'ombre sur desktop */
+  position: static; /* Position statique sur desktop */
+  padding: 0;
+  width: auto;
+}
+
+.nav__links a {
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav__links a:hover {
+  color: var(--primary-color);
+}
+
+.nav__btns {
+  display: block; /* Visible sur desktop */
+}
+
+/* --- Header Section --- */
+header {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  background-image: url("assets/lux_banner.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: var(--header-height); /* Compense la hauteur de la nav */
+}
+
+.header__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Deux colonnes sur desktop */
+  align-items: center;
+  gap: 3rem; /* Espacement */
+  padding: 2rem; /* Padding pour le contenu */
+  max-width: var(--max-width);
+  margin-inline: auto;
+  /* Assure que le contenu ne touche pas les bords sur les très grands écrans */
+  width: 100%;
+}
+
+.header__content {
+  text-align: left; /* Alignement à gauche sur desktop */
+  /* Ajuste la largeur pour éviter le débordement sur les écrans intermédiaires */
+  max-width: 600px;
+}
+
+.header__content p {
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.header__content h1 {
+  font-family: var(--heading-font);
+  font-size: 4.5rem; /* Grande taille sur desktop */
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.header__btns {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alignement à gauche */
+  gap: 1rem;
+  flex-wrap: nowrap; /* Pas de retour à la ligne par défaut */
+}
+
+.header__btns a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.header__btns a i {
+  font-size: 1.8rem;
+}
+
+.header__btns a:hover {
+  color: var(--primary-color-dark);
+}
+
+.header__image {
+  display: block; /* Visible sur desktop */
+  /* Limite la largeur de l'image si elle est trop grande */
+  max-width: 100%;
+}
+
+/* --- Destination Section --- */
+.destination__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 colonnes pour desktop */
+  gap: 2rem;
+}
+
+.destination__card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.destination__card img {
+  height: 480px;
+  object-fit: cover;
+}
+
+.destination__card__details {
+  padding: 1rem;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: row; /* En ligne sur desktop */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.destination__card__details h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.destination__card__details p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.destination__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.destination__rating i {
+  font-size: 0.9rem;
+}
+
+/* --- Journey Section --- */
+.journey__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 colonnes pour desktop */
+  gap: 2rem;
+}
+
+.journey__card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  min-height: 280px;
+}
+
+.journey__card__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  padding: 1rem;
+}
+
+.journey__card__bg i {
+  font-size: 2.5rem;
+}
+
+.journey__card__bg h4 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.journey__card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: translateY(100%); /* Masqué par défaut */
+  transition: transform 0.4s ease;
+}
+
+.journey__card__content i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.journey__card__content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.journey__card__content p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.journey__card:hover .journey__card__bg {
+  opacity: 0;
+}
+
+.journey__card:hover .journey__card__content {
+  transform: translateY(0);
+}
+
+/* --- Showcase Section --- */
+.showcase__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Deux colonnes sur desktop */
+  gap: 3rem;
+  align-items: center;
+  padding: var(--section-padding-desktop);
+}
+
+.showcase__image {
+  order: 1; /* L'image est à gauche par défaut sur desktop */
+}
+
+.showcase__image img {
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+}
+
+.showcase__content {
+  order: 2; /* Le contenu est à droite par défaut sur desktop */
+  text-align: left; /* Alignement à gauche */
+}
+
+.showcase__content h4 {
+  font-size: 1.8rem;
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.showcase__content p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.showcase__content ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.showcase__content ol li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.showcase__btn {
+  display: flex;
+  justify-content: flex-start; /* Alignement à gauche du bouton */
+  width: auto;
+}
+
+/* --- Banner Section --- */
+.banner__container {
+  min-height: 300px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/banner-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: 2rem;
+}
+
+.banner__content h3 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.banner__content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Discover Section --- */
+.discover__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 colonnes pour desktop */
+  gap: 2rem;
+}
+
+.discover__card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discover__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.discover__card i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.discover__card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.discover__card p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* --- Client Testimonials Section (Swiper) --- */
+.client__container {
+  padding-bottom: 4rem;
+}
+
+.swiper {
+  width: 100%;
+  height: auto;
+  padding: 2rem 0; /* Ajoute du padding pour les ombres des cartes */
+}
+
+.swiper-wrapper{
+  display: flex;
+  grid-area: 2.5rem;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.client__card {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  padding: 2rem;
+  max-width: 400px; /* Limite la largeur des témoignages */
+  text-align: center;
+  margin: 0 1rem; /* Marge latérale pour les slides */
+}
+
+.client__content {
+  margin-bottom: 1.25rem;
+}
+
+.client__rating {
+  color: #ffc107; /* Jaune étoile */
+  margin-bottom: 0.75rem;
+}
+
+.client__rating i {
+  font-size: 1.1rem;
+}
+
+.client__content p {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-style: italic;
+}
+
+.client__details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.client__details img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+}
+
+.client__details h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.client__details h5 {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* --- Footer Section --- */
+footer {
+  background-color: var(--text-dark);
+  color: var(--light-grey);
+  padding-top: 3rem;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes sur desktop */
+  gap: 2rem;
+  padding: var(--section-padding-desktop);
+}
+
+.footer__col:first-child .footer__logo img {
+  max-width: 120px;
+  margin-bottom: 1rem;
+}
+
+.footer__col p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.footer__socials a {
+  font-size: 1.3rem;
+  color: var(--light-grey);
+  transition: color 0.3s ease;
+}
+
+.footer__socials a:hover {
+  color: var(--primary-color);
+}
+
+.footer__col h4 {
+  font-size: 1.1rem;
+  font-family: var(--heading-font);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer__links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer__links a {
+  font-size: 0.85rem;
+  color: var(--light-grey);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer__links a:hover {
+  color: var(--primary-color);
+}
+
+.footer__links a i {
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+}
+
+.footer__col form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer__col input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 5px;
+  background-color: var(--white);
+  color: var(--text-dark);
+  font-size: 0.85rem;
+}
+
+.footer__col input::placeholder {
+  color: var(--text-light);
+}
+
+.footer__col form .btn {
+  width: auto; /* Bouton avec sa largeur naturelle */
+  align-self: flex-start; /* Aligné à gauche */
+}
+
+.footer__bar {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--light-grey);
+  padding: 1rem 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+}
+
+/* --- Media Queries (Mobile-First) --- */
+
+/* Pour les écrans de petite taille (moins de 768px, ex: mobiles) */
+@media (max-width: 767px) {
+  .section__container {
+    padding: var(--section-padding-mobile); /* Padding adapté pour mobile */
+  }
+
+  .section__header {
+    font-size: 2rem; /* Taille de titre plus petite */
+  }
+
+  /* Navigation mobile */
+  nav {
+    padding: 0 1.25rem; /* Ajuste le padding */
+  }
+
+  .nav__header {
+    width: 100%; /* Occupe toute la largeur pour centrer le logo */
+    justify-content: space-between; /* Permet d'espacer le logo et le bouton menu */
+  }
+
+  .nav__logo {
+    flex-grow: 1; /* Permet au logo de prendre l'espace restant pour centrer */
+    text-align: center; /* Centre le texte du logo */
+  }
+
+  .nav__menu__btn {
+    display: block; /* Affiche le bouton burger */
+    order: 2; /* Pour qu'il soit à droite du logo */
+  }
+
+  .nav__logo {
+    order: 1; /* Le logo en premier */
+  }
+
+  .nav__btns {
+    order: 3; /* Le bouton "RÉSERVATION" en dernier */
+    display: block; /* Assure que le bouton RÉSERVATION est visible sur mobile */
+  }
+
+  .nav__links {
+    position: absolute;
+    top: var(--header-height); /* Sous la navbar */
+    left: 0;
+    width: 100%;
+    flex-direction: column; /* Les liens sont empilés verticalement */
+    background-color: var(--white);
+    box-shadow: var(--card-shadow);
+    transform: translateY(-100%); /* Masqué par défaut */
+    transition: transform 0.3s ease-in-out;
+    padding: 1.5rem 1.25rem; /* Padding pour les liens du menu */
+    text-align: center; /* Centre les liens */
+    gap: 1rem; /* Moins d'espace */
+  }
+
+  .nav__links.open {
+    transform: translateY(0); /* Affiche le menu */
+  }
+
+  /* Header Section mobile */
+  .header__container {
+    grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    gap: 2rem; /* Réduit l'espace */
+    text-align: center; /* Centre le texte */
+    padding: 2rem 1.25rem; /* Padding pour éviter les bords */
+  }
+
+  .header__content {
+    text-align: center;
+  }
+
+  .header__content h1 {
+    font-size: 2.5rem; /* Taille de titre plus petite */
+  }
+
+  .header__btns {
+    justify-content: center; /* Centrer les boutons */
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne */
+  }
+
+  .header__image {
+    display: none; /* Masqué sur mobile */
+  }
+
+  /* Autres sections adaptées au mobile */
+  .destination__grid,
+  .journey__grid,
+  .discover__grid {
+    grid-template-columns: 1fr; /* Une seule colonne pour les grilles */
+    gap: 1.5rem;
+  }
+
+  .destination__card__details {
+    flex-direction: column; /* Empilé sur mobile */
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .journey__card {
+    min-height: 250px; /* Ajuste la hauteur min */
+  }
+
+  .showcase__container {
+    grid-template-columns: 1fr; /* Une seule colonne */
+    gap: 2.5rem;
+    padding: var(--section-padding-mobile);
+  }
+
+  .showcase__image {
+    order: 1; /* L'image est d'abord */
+  }
+
+  .showcase__content {
+    order: 2; /* Le contenu après l'image */
+    text-align: center; /* Centre le texte */
+  }
+
+  .showcase__content h4,
+  .showcase__content p {
+    text-align: center;
+  }
+
+  .showcase__content ol {
+    margin-inline: auto; /* Centre la liste */
+    max-width: 90%; /* Limite la largeur pour une meilleure lisibilité */
+    text-align: left; /* Garde le texte de la liste aligné à gauche */
+  }
+
+  .showcase__btn {
+    justify-content: center; /* Centrer le bouton */
+  }
+
+  .banner__container {
+    min-height: 250px; /* Hauteur plus petite */
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr; /* Une seule colonne pour le footer */
+    gap: 2rem;
+    padding: var(--section-padding-mobile);
+    text-align: center; /* Centre le texte du footer */
+  }
+
+  .footer__col:first-child .footer__logo img {
+    margin-inline: auto; /* Centre le logo */
+  }
+
+  .footer__socials {
+    justify-content: center; /* Centre les icônes sociales */
+  }
+
+  .footer__col form {
+    align-items: center; /* Centre le formulaire */
+  }
+
+  .footer__col form .btn {
+    width: 100%; /* Le bouton occupe toute la largeur */
+  }
+}
+
+/* Pour les écrans de taille moyenne (tablettes, entre 768px et 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section__container {
+    padding: var(--section-padding-desktop); /* Garde le padding desktop */
+  }
+
+  .section__header {
+    font-size: 2.5rem; /* Taille de titre intermédiaire */
+  }
+
+  /* Navigation sur tablette */
+  nav {
+    padding: 0 2rem;
+  }
+
+  .nav__header {
+    width: auto;
+  }
+
+  .nav__menu__btn {
+    display: none; /* Masque le bouton burger */
+  }
+
+  .nav__links {
+    position: static;
+    flex-direction: row;
+    padding: 0;
+    box-shadow: none;
+    transform: translateY(0);
+    width: auto;
+    background-color: transparent;
+  }
+
+  .nav__btns {
+    display: block;
+  }
+
+  /* Header Section tablette */
+  .header__container {
+    grid-template-columns: 1fr 1fr; /* Deux colonnes */
+    gap: 2rem; /* Réduit un peu l'espace */
+    text-align: left;
+    padding: 2rem; /* Padding pour le contenu */
+  }
+
+  .header__content h1 {
+    font-size: 3.5rem; /* Taille de titre intermédiaire */
+  }
+
+  .destination__grid {
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 1.5rem;
+  }
+
+  .journey__grid {
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 1.5rem;
+  }
+
+  .showcase__container {
+    grid-template-columns: 1fr 1.2fr; /* Légèrement plus de place pour le contenu */
+    gap: 2.5rem;
+  }
+
+  .showcase__image {
+    order: 2; /* Inverse l'ordre sur tablette */
+  }
+
+  .showcase__content {
+    order: 1; /* Le contenu est à gauche */
+    text-align: left;
+  }
+
+  .showcase__content h4,
+  .showcase__content p {
+    text-align: left;
+  }
+
+  .showcase__content ol {
+    margin-inline: 0; /* Retire le centrage */
+    max-width: 100%;
+  }
+
+  .showcase__btn {
+    justify-content: flex-start; /* Aligne le bouton à gauche */
+  }
+
+  .discover__grid {
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 1.5rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+  }
+
+  .footer__col form .btn {
+    width: auto; /* Reviens à la largeur auto */
+    align-self: flex-start;
+  }
+}
