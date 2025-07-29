@@ -1405,7 +1405,7 @@ img {
         font-size: 0.9rem;
     }
     .service__card .card__img {
-        height: 280px; /* Plus petite sur mobile */
+        height: 340px; /* Plus petite sur mobile */
     }
 }
 
