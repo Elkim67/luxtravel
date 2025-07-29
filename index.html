@@ -11,360 +11,559 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <title>LUX Travel</title>
+    <title>LUX Travel - Agence de Voyage</title>
   </head>
   <body>
-    <nav>
-      <div class="nav__header">
-        <div class="nav__logo">
-          <a href="#" class="logo"><span>LUX</span> Travel</a>
+    <nav class="navbar">
+    <div class="navbar__container">
+        <div class="navbar__header">
+            <a href="index.html" class="navbar__logo">LUX<span>Travel</span></a>
+            <div class="navbar__menu__btn" id="menu-btn">
+                <i class="ri-menu-line"></i>
+            </div>
         </div>
-        <div class="nav__menu__btn" id="menu-btn">
-          <i class="ri-menu-line"></i>
+        <ul class="navbar__links" id="navbar-links">
+            <li><a href="index.html" class="active">Accueil</a></li> <li><a href="#about">À Propos</a></li>
+            <li><a href="services.html">Services</a></li> <li><a href="#packages">Forfaits</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="navbar__btns">
+            <a class="contact" href="https://wa.me/+2439751683" target="_blank" class="social__icon social__icon--whatsapp"
+                ><i class="ri-whatsapp-fill"></i
+              >WhatsApp</a>
         </div>
-      </div>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="#home">ACCUEIL</a></li>
-        <li><a href="#about">OFFRES</a></li>
-        <li><a href="#package">SERVICES</a></li>
-        <li><a href="#contact">CONTACTS</a></li>
-      </ul>
-      <div class="nav__btns">
-        <button class="btn">RÉSERVATION</button>
-      </div>
+    </div>
     </nav>
 
-    <header id="home">
-      <div class="header__container">
-        <div class="header__content">
-          <p>BIENVENUE CHEZ LUX TRAVEL AGENCY</p>
-          <h1>Votre partenaire de confiance !</h1>
-          <div class="header__btns">
-            <button class="btn">Réservez votre voyage</button>
-            <a href="#">
-              <span><i class="ri-play-circle-fill"></i></span>
-            </a>
+    <header class="hero" id="home">
+      <div class="hero__container">
+        <div class="hero__content">
+          <p class="hero__subtitle">BIENVENUE CHEZ LUX TRAVEL AGENCY</p>
+          <h1 class="hero__title">Votre partenaire de confiance !</h1>
+          <div class="hero__actions">
+            <button class="btn btn--primary">Réservez votre voyage</button>
           </div>
         </div>
-        <div class="header__image">
-          <img src="assets/lux_banner - Copie.jpg" alt="Vue aérienne d'une ville" />
         </div>
-      </div>
     </header>
 
-    <section class="section__container destination__container" id="about">
-      <h2 class="section__header">Profitez de nos offres <strong>exclusives</strong></h2>
-      <p class="section__description">
-        Votre prochaine aventure est à porté de main.
-        Bénéficiez des offres à des prix imbattables et concrétisez vos projets.
-      </p>
-      <div class="destination__grid">
-        <div class="destination__card">
-          <img src="assets/bresil_visa.jpg" alt="Côtes Espagnoles" />
-          <div class="destination__card__details">
-            <div>
-             <h4>Offre Exclusive</h4>
-            </div>
-    
-          </div>
-        </div>
-        <div class="destination__card">
-          <img src="assets/dubai_visa.jpg" alt="Thessalonique, Grèce" />
-          <div class="destination__card__details">
-            <div>
-               <h4>Offre Exclusive</h4>
+    <section class="section section--light-bg destination__section" id="about">
+      <div class="section__container">
+        <h2 class="section__title">Au délà d'une simple destination, mais un horizon</h2>
+        <p class="section__description">
+          Que vous souhaitiez explorer les merveilles du monde, voyager
+          pour vos études ou et autres activités ou simplement profiter 
+          de vos vacances, chez <strong>Lux Travel</strong> nous avons la soulution.
+        </p>
+        <div class="destination__grid grid-3-cols">
+          <div class="card destination__card">
+            <img src="assets/medical_visas.jpg" alt="Côtes Espagnoles" class="card__img" />
+            <div class="card__content">
+              <h4 class="card__title">Vos soins médicaux à l'étranger assuré</h4>
+              <p class="card__subtitle">Obtenez un visa médical pour votre bien-être corporel.</p>
             </div>
           </div>
-        </div>
-        <div class="destination__card">
-          <img src="assets/medical_visa.jpg" alt="Bali, Indonésie" />
-          <div class="destination__card__details">
-            <div>
-              <h4>Offre Exclusive</h4>
+          <div class="card destination__card">
+            <img src="assets/travel_visa.jpg" alt="Côtes Espagnoles" class="card__img" />
+            <div class="card__content">
+              <h4 class="card__title">Vive les vacances avec Lux Travel</h4>
+              <p class="card__subtitle">Les vacances n'ont jamais été plus jouissif qu'avec Lux Travel. <br>
+                Profitez-en !
+              </p>
+            </div>
+          </div>
+          <div class="card destination__card">
+            <img src="assets/student_visa.jpg" alt="Côtes Espagnoles" class="card__img" />
+            <div class="card__content">
+              <h4 class="card__title">La reussite de vos études à porté de clique</h4>
+              <p class="card__subtitle">
+                N'attendez plus et donner un nouvel élan à vos études.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section__container journey__container" id="tour">
-      <h2 class="section__header">Vos voyages à l'étranger, simplifiés !</h2>
-      <p class="section__description">
-        Planifiez vos prochaines aventures sans effort.
-      </p>
-      <div class="journey__grid">
-        <div class="journey__card">
-          <div class="journey__card__bg">
-            <span><i class="ri-bookmark-3-line"></i></span>
-            <h4>Un Service de Qualité</h4>
+    <section class="section journey__section" id="services">
+      <div class="section__container">
+        <h2 class="section__title">Vos voyages à l'étranger, simplifiés !</h2>
+        <p class="section__description">
+          Planifiez vos prochaines aventures sans effort.
+        </p>
+        <div class="journey__grid grid-3-cols">
+          <div class="card journey__card">
+            <div class="journey__icon-bg">
+              <span><i class="ri-bookmark-3-line"></i></span>
+            </div>
+            <div class="card__content">
+              <h4 class="card__title">Accédez à un service personnalisé</h4>
+              <p class="card__text">
+                Notre mission est de fournir un service personnalisé et efficace
+                afin de répondre à vos besoins et vous assurer un service
+                impeccable.
+              </p>
+            </div>
           </div>
-          <div class="journey__card__content">
-            <span><i class="ri-bookmark-3-line"></i></span>
-            <h4>Accédez à un service personnalisé</h4>
-            <p>
-              Notre mission est de fournir un service personnalisé et efficace
-              afin de répondre à vos besoins et vous assurer un service
-              impeccable.
-            </p>
+          <div class="card journey__card">
+            <div class="journey__icon-bg">
+              <span><i class="ri-landscape-fill"></i></span>
+            </div>
+            <div class="card__content">
+              <h4 class="card__title">Découvrez des plans de voyage personnalisés pour vous</h4>
+              <p class="card__text">
+                Que vous souhaitiez explorer les merveilles de l'Europe,
+                découvrir les paysages époustouflants d'Asie, ou profiter des
+                plages idylliques des Caraïbes, nous sommes là pour vous guider.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="journey__card">
-          <div class="journey__card__bg">
-            <span><i class="ri-landscape-fill"></i></span>
-            <h4>Un guidage taillé à votre image</h4>
-          </div>
-          <div class="journey__card__content">
-            <span><i class="ri-landscape-fill"></i></span>
-            <h4>Découvrez des plans de voyage personnalisés pour vous</h4>
-            <p>
-              Que vous souhaitiez explorer les merveilles de l'Europe,
-              découvrir les paysages époustouflants d'Asie, ou profiter des
-              plages idylliques des Caraïbes, nous sommes là pour vous guider.
-            </p>
-          </div>
-        </div>
-        <div class="journey__card">
-          <div class="journey__card__bg">
-            <span><i class="ri-map-2-line"></i></span>
-            <h4>Nos Experts à Votre Disposition</h4>
-          </div>
-          <div class="journey__card__content">
-            <span><i class="ri-map-2-line"></i></span>
-            <h4>Une équipe de professionnels à votre écoute</h4>
-            <p>
-              Chez LUX Travel, nous croyons que vous méritez une assistance.
-              Qu'il s'agisse de conseils pour le remplissage des formulaires ou
-              pour faire votre demande, notre équipe est à votre disposition.
-            </p>
+          <div class="card journey__card">
+            <div class="journey__icon-bg">
+              <span><i class="ri-map-2-line"></i></span>
+            </div>
+            <div class="card__content">
+              <h4 class="card__title">Une équipe de professionnels à votre écoute</h4>
+              <p class="card__text">
+                Chez LUX Travel, nous croyons que vous méritez une assistance.
+                Qu'il s'agisse de conseils pour le remplissage des formulaires ou
+                pour faire votre demande, notre équipe est à votre disposition.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section__container showcase__container" id="package">
-      <div class="showcase__image">
-        <img src="assets/services_img.jpg" alt="" />
+    <!-- <section class="section section--light-bg package__section" id="packages">
+      <div class="section__container">
+        <div class="package__content-grid">
+          <div class="package__image">
+            <img src="assets/visa_banner.jpg" alt="Bannière Visa Canada" class="img-fluid" />
+          </div>
+          <div class="package__details">
+            <h3 class="package__title">VISA TOURISTIQUE CANADA</h3>
+            <p class="package__description">
+              Faites votre demande dès maintenant pour un visa touristique Canada.
+              Frais de service payable après l'obtention du visa.
+            </p>
+            <p class="package__promo-date">Promotion du 01 au 30 Juillet 2025</p>
+            <h4 class="package__conditions-title">Conditions :</h4>
+            <ul class="package__conditions-list">
+              <li>Avoir un passeport valide</li>
+              <li>Les frais consulaires sont à la charge du client</li>
+            </ul>
+            <div class="package__actions">
+              <button class="btn btn--primary">
+                Faire ma demande
+                <span><i class="ri-arrow-right-line"></i></span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="showcase__content">
-        <h4>DECOUVREZ NOS SERVICES</h4>
-        <p>
-          Faites votre demande dès maintenant pour un tout type de visa.
-          Nous sommes à votre écoute.
+    </section> -->
+
+    <section class="section__container package__section" id="packages">
+      <div class="package__content-grid">
+          <div class="package__image">
+              <img src="assets/packages (2).jpg" alt="Visa Canada" class="img-fluid">
+          </div>
+          <div class="package__details">
+              <h2 class="package__title">Découvrez Nos Forfaits de Voyage Exclusifs</h2>
+              <p class="package__description">
+                  Chez LUX Travel, nous avons conçu des forfaits de voyage uniques pour répondre à toutes vos envies d'évasion. Que vous recherchiez l'aventure, la détente ou une immersion culturelle, nos offres sont pensées pour vous offrir des expériences inoubliables et sans souci.
+              </p>
+              <p class="package__description">
+                  Chaque forfait est une promesse d'excellence, combinant hébergements de qualité, activités captivantes et un service irréprochable. Laissez-vous guider par nos experts et préparez-vous à vivre des moments magiques.
+              </p>
+              <div class="package__actions">
+                  <a href="services.html" class="btn btn--primary">Découvrir Nos Services <i class="ri-arrow-right-line"></i></a>
+              </div>
+              </div>
+      </div>
+    </section>
+
+    <section class="section section--blue-bg cta__section">
+      <div class="section__container cta__container">
+        <h2 class="section__title cta__title">Prêt à Voyager ?</h2>
+        <p class="section__description cta__description">
+          Contactez-nous pour une offre personnalisée !
         </p>
-        <p>N'attendez plus !</p>
-        <p>
-          Conditions :
-          <ol>
-            <li>Avoir un passeport valide</li>
-            <li>Les frais consulaires sont à la charge du client</li>
-          </ol>
-        </p>
-        <div class="showcase__btn">
-          <button class="btn">
-            Faire ma demande
-            <span><i class="ri-arrow-right-line"></i></span>
+        <div class="cta__actions">
+          <button class="btn btn--white">
+            <a href="tel:+2439751683">
+                <span><i class="ri-phone-fill"></i></span> +243 895289038
+              </a>
+          </button>
+          <button class="btn btn--outline-white">
+            <a href="https://wa.me/+2439751683" target="_blank" class="social__icon social__icon--whatsapp"
+                ><i class="ri-whatsapp-fill"></i
+              ></a>WhatsApp
           </button>
         </div>
       </div>
     </section>
 
-    <section class="section__container discover__container">
-      <h2 class="section__header">Êtes-vous Prêt Pour l'Aventure ?</h2>
-      <p class="section__description">
-        Votre destination n'attend que vous !
-      </p>
-      <div class="discover__grid">
-        <div class="discover__card">
-          <span><i class="ri-camera-lens-line"></i></span>
-          <h4>Des Paysages Urbains</h4>
-          <p>
-            Découvrez ou redécouvrez la beauté architecturale des plus grandes
-            villes du monde vues du ciel.
-          </p>
-        </div>
-        <div class="discover__card">
-          <span><i class="ri-ship-line"></i></span>
-          <h4>Merveilles Côtières</h4>
-          <p>
-            Volez au-dessus des eaux turquoises et des paysages idylliques des
-            sites côtiers.
-          </p>
-        </div>
-        <div class="discover__card">
-          <span><i class="ri-landscape-line"></i></span>
-          <h4>Paysages Historiques</h4>
-          <p>
-            Observez la grandeur des châteaux anciens et des grands édifices du
-            passé dans une toute nouvelle expérience.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section__container client__container">
-      <h2 class="section__header">Témoignages de Nos Clients</h2>
-      <p class="section__description">
-        Nos résultats parlent pour eux-mêmes. Des clients satisfaits
-        contribuent à notre développement.
-      </p>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="client__card">
-              <div class="client__content">
-                <div class="client__rating">
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                </div>
-                <p>
-                  Le niveau d'expertise de LUX Travel est très élevé et les
-                  services proposés sont de très bonnes qualités. Je recommande
-                  vivement toute personne souhaitant faire ses démarches dans un
-                  cadre professionnel pour plus de sûreté.
-                </p>
-              </div>
-              <div class="client__details">
-                <img src="assets/client-1.jpg" alt="Photo de John Adams" />
-                <div>
-                  <h4>Espoir Kalala</h4>
-                  <h5>Voyageur</h5>
-                </div>
-              </div>
+    <section class="section discover__section">
+      <div class="section__container">
+        <h2 class="section__title">Êtes-vous Prêt Pour l'Aventure ?</h2>
+        <p class="section__description">Votre destination n'attend que vous !</p>
+        <div class="discover__grid grid-3-cols">
+          <div class="card discover__card">
+            <div class="discover__icon">
+              <span><i class="ri-camera-lens-line"></i></span>
             </div>
+            <h4 class="card__title">Des Paysages Urbains</h4>
+            <p class="card__text">
+              Découvrez ou redécouvrez la beauté architecturale des plus grandes
+              villes du monde vues du ciel.
+            </p>
           </div>
-          <div class="swiper-slide">
-            <div class="client__card">
-              <div class="client__content">
-                <div class="client__rating">
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                </div>
-                <p>
-                  Mon aventure récente avec LUX Travel a été tout simplement
-                  spectaculaire. Je suis déjà en train de planifier ma
-                  prochaine aventure avec eux !
-                </p>
-              </div>
-              <div class="client__details">
-                <img src="assets/client-2.jpg" alt="Photo de Emily Thompson" />
-                <div>
-                  <h4>Esther Mulenda</h4>
-                  <h5>Blogeuse</h5>
-                </div>
-              </div>
+          <div class="card discover__card">
+            <div class="discover__icon">
+              <span><i class="ri-ship-line"></i></span>
             </div>
+            <h4 class="card__title">Merveilles Côtières</h4>
+            <p class="card__text">
+              Volez au-dessus des eaux turquoises et des paysages idylliques des
+              sites côtiers.
+            </p>
           </div>
-          <div class="swiper-slide">
-            <div class="client__card">
-              <div class="client__content">
-                <div class="client__rating">
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                  <span><i class="ri-star-fill"></i></span>
-                </div>
-                <p>
-                  LUX Travel a offert une expérience transformatrice pour mes
-                  recherches sur les monuments historiques. Je recommande
-                  vivement leurs services aux autres historiens et passionnés de
-                  culture.
-                </p>
-              </div>
-              <div class="client__details">
-                <img src="assets/client-3.jpg" alt="Photo de Sarah Lee" />
-                <div>
-                  <h4>Daniel Mafuta</h4>
-                  <h5>Architecte</h5>
-                </div>
-              </div>
+          <div class="card discover__card">
+            <div class="discover__icon">
+              <span><i class="ri-landscape-line"></i></span>
             </div>
+            <h4 class="card__title">Paysages Historiques</h4>
+            <p class="card__text">
+              Observez la grandeur des châteaux anciens et des grands édifices du
+              passé dans une toute nouvelle expérience.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <footer id="contact">
-      <div class="section__container footer__container">
-        <div class="footer__col">
+    <!-- <section class="section section--light-bg client__section">
+      <div class="section__container">
+        <h2 class="section__title">Témoignages de Nos Clients</h2>
+        <p class="section__description">
+          Nos résultats parlent pour eux-mêmes. Des clients satisfaits
+          contribuent à notre développement.
+        </p>
+        <div class="swiper client-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card client__card">
+                <div class="client__content">
+                  <div class="client__rating">
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                  </div>
+                  <p class="client__text">
+                    Le niveau d'expertise de LUX Travel est très élevé et les
+                    services proposés sont de très bonnes qualités. Je recommande
+                    vivement toute personne souhaitant faire ses démarches dans un
+                    cadre professionnel pour plus de sûreté.
+                  </p>
+                </div>
+                <div class="client__details">
+                  <img src="assets/client-1.jpg" alt="Photo de John Adams" class="client__img" />
+                  <div>
+                    <h4 class="client__name">John Adams</h4>
+                    <h5 class="client__role">Voyageur</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card client__card">
+                <div class="client__content">
+                  <div class="client__rating">
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                  </div>
+                  <p class="client__text">
+                    Mon aventure récente avec LUX Travel a été tout simplement
+                    spectaculaire. Je suis déjà en train de planifier ma
+                    prochaine aventure avec eux !
+                  </p>
+                </div>
+                <div class="client__details">
+                  <img src="assets/client-2.jpg" alt="Photo de Emily Thompson" class="client__img" />
+                  <div>
+                    <h4 class="client__name">Emily Thompson</h4>
+                    <h5 class="client__role">Aventurière</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card client__card">
+                <div class="client__content">
+                  <div class="client__rating">
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                  </div>
+                  <p class="client__text">
+                    LUX Travel a offert une expérience transformatrice pour mes
+                    recherches sur les monuments historiques. Je recommande
+                    vivement leurs services aux autres historiens et passionnés de
+                    culture.
+                  </p>
+                </div>
+                <div class="client__details">
+                  <img src="assets/client-3.jpg" alt="Photo de Sarah Lee" class="client__img" />
+                  <div>
+                    <h4 class="client__name">Sarah Lee</h4>
+                    <h5 class="client__role">Historienne</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card client__card">
+                <div class="client__content">
+                  <div class="client__rating">
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                  </div>
+                  <p class="client__text">
+                    Trouver un équilibre entre le travail et les voyages peut être
+                    difficile, mais LUX Travel a rendu cela facile.
+                  </p>
+                </div>
+                <div class="client__details">
+                  <img src="assets/client-4.jpg" alt="Photo de David Patel" class="client__img" />
+                  <div>
+                    <h4 class="client__name">David Patel</h4>
+                    <h5 class="client__role">Entrepreneur</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="section contact__section" id="contact">
+      <div class="section__container contact__grid">
+        <div class="contact__info">
+          <h2 class="section__title contact__title">Contactez-nous</h2>
+          <p class="section__description contact__description">
+            Nous sommes là pour répondre à toutes vos questions et vous aider à planifier votre
+            expérience de voyage avec LUX Travel.
+          </p>
+
+          <div class="info-card">
+            <h4 class="info-card__title">Notre Adresse</h4>
+            <p class="info-card__text">
+              01 Avenue du 24 novembre,Gombe,<br> 
+              Immeuble Arianna, 1er étage, local 01
+            </p>
+            <a href="#" class="info-card__link">
+              <span><i class="ri-map-pin-line"></i></span> Voir sur Google Maps
+            </a>
+          </div>
+
+          <div class="info-card">
+            <h4 class="info-card__title">Contact Direct</h4>
+            <p class="info-card__text">
+              <i class="ri-phone-fill"></i> +243 895289038 <br />
+              <i class="ri-mail-line"></i> luxtraveldrc@gmail.com
+            </p>
+            <div class="info-card__actions">
+              <a class="contact" href="https://wa.me/+2439751683" target="_blank" class="social__icon social__icon--whatsapp"
+                ><i class="ri-whatsapp-fill"></i
+              >WhatsApp</a>
+              <a href="tel:+2439751683">
+                <span><i class="ri-phone-fill"></i></span> +243 895289038
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="contact__form-area">
+          <h3 class="form__title">Planifiez votre voyage</h3>
+          <form class="contact__form">
+            <div class="form__group">
+              <label for="full_name">Nom complet *</label>
+              <input type="text" id="full_name" placeholder="Votre nom" required />
+            </div>
+            <div class="form__group">
+              <label for="phone">Téléphone *</label>
+              <input type="tel" id="phone" placeholder="+243 XXX XXX XXX" required />
+            </div>
+            <div class="form__group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="votre@email.com" />
+            </div>
+            <div class="form__group form__group--two-cols">
+                <div class="form__sub-group">
+                    <label for="trip_type">Type de voyage *</label>
+                    <select id="trip_type" required>
+                        <option value="">Choisissez...</option>
+                        <option value="visa">Visa</option>
+                        <option value="tourism">Tourisme</option>
+                        <option value="business">Affaires</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+                <div class="form__sub-group">
+                    <label for="desired_date">Date souhaitée</label>
+                    <input type="date" id="desired_date" />
+                </div>
+            </div>
+            <div class="form__group form__group--two-cols">
+                <div class="form__sub-group">
+                    <label for="num_travelers">Nombre de voyageurs</label>
+                    <input type="number" id="num_travelers" placeholder="Nombre..." min="1" />
+                </div>
+                <div class="form__sub-group">
+                    <label for="budget">Budget estimé</label>
+                    <input type="text" id="budget" placeholder="Budget..." />
+                </div>
+            </div>
+            <div class="form__group">
+              <label for="description">Description de votre voyage</label>
+              <textarea id="description" rows="5" placeholder="Décrivez votre vision, vos besoins spécifiques, les destinations souhaitées..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full-width">Envoyer la demande</button>
+          </form>
+
+          <div class="reservation-process">
+            <h4 class="process__title">Processus de réservation</h4>
+            <ul class="process__list">
+              <li>
+                <span class="process__step-num">1</span>
+                <div class="process__step-content">
+                  <h5>Demande de devis</h5>
+                  <p>Remplissez le formulaire ci-contre.</p>
+                </div>
+              </li>
+              <li>
+                <span class="process__step-num">2</span>
+                <div class="process__step-content">
+                  <h5>Consultation</h5>
+                  <p>Échange sur vos besoins et attentes.</p>
+                </div>
+              </li>
+              <li>
+                <span class="process__step-num">3</span>
+                <div class="process__step-content">
+                  <h5>Proposition</h5>
+                  <p>Devis personnalisé et itinéraire proposé.</p>
+                </div>
+              </li>
+              <li>
+                <span class="process__step-num">4</span>
+                <div class="process__step-content">
+                  <h5>Confirmation</h5>
+                  <p>Validation et versement de l'acompte.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__col footer__col--about">
           <div class="footer__logo">
-            <a href="#" class="logo"
-              ><img src="assets/logo.png" alt="Logo LUX Travel"
-            /></a>
+            <a href="#" class="logo"><img src="assets/logo.png" alt="Logo LUX Travel" /></a>
           </div>
-          <p>
+          <p class="footer__description">
             Explorez le monde avec facilité et enthousiasme grâce à notre
             plateforme de voyage intuitive. Votre voyage commence ici, là où une
             planification sans effort crée des expériences inoubliables.
           </p>
           <ul class="footer__socials">
             <li>
-              <a href="#"><i class="ri-facebook-fill"></i></a>
+              <a href="https://wa.me/+2439751683" target="_blank" class="social__icon social__icon--whatsapp"
+                ><i class="ri-whatsapp-fill"></i
+              ></a>
             </li>
             <li>
-              <a href="#"><i class="ri-instagram-line"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-youtube-line"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=61577987315247 " target="_blank" class="social__icon social__icon--facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
             </li>
           </ul>
         </div>
-        <div class="footer__col">
-          <h4>Liens Rapides</h4>
-          <ul class="footer__links">
+
+        <div class="footer__col footer__col--links">
+          <h4 class="footer__heading">Navigation</h4>
+          <ul class="footer__list">
             <li><a href="#home">Accueil</a></li>
             <li><a href="#about">À Propos</a></li>
-            <li><a href="#tour">Services</a></li>
-            <li><a href="#contact">Contacts</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#packages">Forfaits</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-        <div class="footer__col">
-          <h4>Contactez-nous</h4>
-          <ul class="footer__links">
+
+        <div class="footer__col footer__col--contact">
+          <h4 class="footer__heading">Contact</h4>
+          <ul class="footer__list">
             <li>
               <a href="#">
+                <span><i class="ri-map-pin-2-fill"></i></span> 01 Avenue du 24 novembre,Gombe,<br> Immeuble Arianna, 1er étage, local 01
+              </a>
+            </li>
+            <li>
+              <a href="tel:+2439751683">
                 <span><i class="ri-phone-fill"></i></span> +243 895289038
               </a>
             </li>
             <li>
-              <a href="#">
-                <span><i class="ri-record-mail-line"></i></span>
-                luxtraveldrc@gmail.com
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span><i class="ri-record-mail-line"></i></span>
-                designdegrace@gmail.com
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span><i class="ri-map-pin-2-fill"></i></span> 01, Avenue du
-                24 Novembre, Gombe, Immeuble Ariana, 1er étage, local 01 <br />
-                (Réf: Station Ariana, à quelques mètres de l'ISC Gombe)
+              <a href="mailto:luxtraveldrc@gmail.com" target="_blank">
+                <span><i class="ri-mail-line"></i></span> luxtraveldrc@gmail.com
               </a>
             </li>
           </ul>
         </div>
-        <div class="footer__col">
-          <h4>S'enregistrer</h4>
-          <form action="/">
-            <input type="email" placeholder="Entrez votre email" />
-            <button class="btn">Enregistrer</button>
-          </form>
+
+        <div class="footer__col footer__col--hours">
+          <h4 class="footer__heading">Horaires de Bureau</h4>
+          <ul class="footer__list">
+            <li>
+              <span><i class="ri-time-line"></i></span> Lundi - Vendredi: 9h00 - 17h00
+            </li>
+            <li>
+              <span><i class="ri-time-line"></i></span> Dimanche: Fermé
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="footer__bar">
-        Design Par K7 Teams <br />
-        Copyright © 2025 GEGRACE COMS. Tous Droits Réservés.
+
+      <div class="footer__bottom">
+        <p class="footer__copy">
+          Copyright © 2025 LUX Travel. Tous Droits Réservés. | Design Par K7 Teams
+        </p>
       </div>
     </footer>
 
