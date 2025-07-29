@@ -525,6 +525,7 @@ img {
 
 /* --- CTA Section --- */
 .cta__section {
+  background: url(assets/contact_banner1.jpg);
   text-align: center;
   padding: 4rem 2rem; /* Ajuste le padding */
   border-radius: var(--card-border-radius);
@@ -1300,7 +1301,7 @@ img {
     padding-top: var(--header-height); /* Assure que le contenu n'est pas caché par la navbar */
     display: flex; /* Centrage vertical du contenu */
     align-items: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/header-services.jpg"); /* Image de fond spécifique, à remplacer */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/header-bg.jpg"); /* Image de fond spécifique, à remplacer */
     background-position: center center;
     background-size: cover;
     color: var(--color-white);
@@ -1333,7 +1334,7 @@ img {
 }
 
 .service__card .card__img {
-    height: 250px; /* Hauteur fixe pour les images de services */
+    height: 340px; /* Hauteur fixe pour les images de services */
     object-fit: cover;
     border-radius: var(--card-border-radius) var(--card-border-radius) 0 0; /* Coins arrondis en haut */
 }
