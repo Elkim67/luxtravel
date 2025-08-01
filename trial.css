@@ -1,0 +1,158 @@
+/* --- Variables CSS (à placer au début de votre fichier CSS) --- */
+:root {
+    --primary-color: #007bff; /* Bleu typique pour les actions principales */
+    --secondary-color: #6c757d; /* Gris secondaire */
+    --text-dark: #333333; /* Couleur de texte foncée */
+    --text-light: #f8f9fa; /* Couleur de texte claire */
+    --white: #ffffff; /* Blanc */
+    --light-gray: #f2f2f2; /* Gris très clair pour les fonds */
+    --dark-gray: #555555; /* Gris foncé pour le texte secondaire */
+    --header-height: 80px; /* Hauteur de votre barre de navigation desktop */
+    --transition-speed: 0.3s; /* Vitesse des transitions générales */
+}
+
+.navbar {
+    position: sticky;
+    top: 0; /* TRÈS IMPORTANT : Assurez-vous que cette propriété n'est pas surchargée */
+    z-index: 1000; /* Assurez-vous qu'il est au-dessus */
+    /* ... autres styles ... */
+}
+
+/* --- MEDIA QUERIES pour le Responsive Design --- */
+
+@media (max-width: 991px) { /* Pour les tablettes, ajustez si nécessaire */
+    .navbar__links {
+        gap: 15px;
+    }
+    .navbar__links li a {
+        font-size: 1rem;
+    }
+    .navbar__btns .contact {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+    .hero__title {
+        font-size: 2.8rem;
+    }
+    .hero__subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 767px) { /* Styles spécifiques pour les mobiles */
+    .navbar {
+        height: 70px; /* Ajustez la hauteur du header pour mobile si besoin */
+        padding: 0 15px;
+    }
+
+    
+
+    .navbar__container {
+        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si besoin */
+    }
+
+    .navbar__header {
+        width: 100%; /* Le header du logo et burger prend toute la largeur */
+        justify-content: space-between; /* Espace le logo et le burger */
+    }
+
+    .navbar__menu__btn {
+        display: block; /* Affiche le bouton burger sur mobile */
+    }
+
+    .navbar__links {
+        display: none; /* Cache les liens de navigation par défaut sur mobile */
+        flex-direction: column; /* Les liens s'empilent verticalement */
+        position: absolute; /* Place le menu au-dessus du contenu */
+        top: var(--navbar-height, 70px); /* Ajustez à la hauteur de votre navbar mobile */
+        left: 0;
+        width: 100%;
+        background-color: var(--white); /* Fond blanc pour le menu ouvert */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 999; /* Assure qu'il est au-dessus du contenu */
+        overflow-y: auto; /* Permet le défilement si le menu est très long */
+        max-height: calc(100vh - var(--navbar-height, 70px)); /* Limite la hauteur du menu */
+        transform: translateY(-100%); /* Masque le menu initialement hors de l'écran par le haut */
+        transition: transform var(--transition-speed) ease-out; /* Animation de glissement */
+    }
+
+    .navbar__links.open {
+        display: flex; /* Affiche le menu quand la classe 'open' est ajoutée par JS */
+        transform: translateY(0); /* Fait glisser le menu en position visible */
+    }
+
+    .navbar__links li {
+        width: 100%; /* Chaque lien prend toute la largeur */
+        text-align: center;
+        padding: 10px 0; /* Espacement vertical pour chaque lien */
+    }
+
+    .navbar__links li a {
+        display: block; /* Rend tout le bloc du li cliquable */
+        padding: 10px;
+    }
+
+    .navbar__links li a.active::after,
+    .navbar__links li a:hover::after {
+        content: none; /* Supprime l'animation de ligne en dessous des liens sur mobile si vous voulez */
+    }
+
+    .navbar__btns {
+        display: none; /* Cache le bouton WhatsApp sur mobile, à moins que vous ne le mettiez dans le menu burger */
+    }
+
+    .hero {
+        height: calc(100vh - 70px); /* Ajuste la hauteur du hero pour le mobile */
+    }
+
+    .hero__title {
+        font-size: 2rem;
+    }
+    .hero__subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) { /* Ajustements pour très petits écrans */
+    .hero__title {
+        font-size: 1.8rem;
+    }
+    .hero__subtitle {
+        font-size: 0.8rem;
+    }
+    .hero__actions .btn--primary {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+
+/* --- Styles pour les autres sections (à ajouter ou adapter selon votre contenu) --- */
+/*
+.section__container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.section__title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.section__description {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--dark-gray);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.destination__card, .journey__card, .discover__card, .client__card, .footer__col {
+    // Styles pour les cartes et colonnes des sections
+    // N'oubliez pas d'ajouter les transitions pour ScrollReveal si vous ne l'avez pas fait via JS
+}
+*/

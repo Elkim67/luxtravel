@@ -330,21 +330,22 @@ img {
 }
 
 /* --- Hero Section --- */
+/* Styles pour un header plus grand sur la page d'accueil */
 .hero {
-  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height)); /* Prend la hauteur restante de l'écran */
   display: flex;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("assets/lux_banner\ -\ Copie.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("assets/lux_banner - Copie.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: var(--header-height);
+  padding-top: var(--header-height); /* Décale le contenu sous la navbar */
   color: var(--color-white);
-  text-align: center; /* Center content on desktop and mobile */
+  text-align: center;
 }
 
 .hero__container {
-  max-width: 900px; /* Limit width for centered text readability */
+  max-width: 900px; /* Limite la largeur du texte pour la lisibilité */
   margin-inline: auto;
   padding: 2rem;
   width: 100%;
@@ -358,7 +359,7 @@ img {
 
 .hero__title {
   font-family: var(--font-heading);
-  font-size: 4rem; /* Large size on desktop */
+  font-size: 4rem; /* Grande taille sur desktop */
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 2rem;
@@ -367,10 +368,34 @@ img {
 .hero__actions {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center buttons */
+  justify-content: center; /* Centre les boutons */
   gap: 1.5rem;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap; /* Permet aux boutons de passer à la ligne */
 }
+
+/* Styles pour un header plus petit et centré (utilisé pour les pages internes, et maintenant pour l'accueil) */
+.hero--small {
+    min-height: 60vh; /* Vous pouvez ajuster cette hauteur. 60vh est un bon compromis pour l'accueil */
+    /* La padding-top, display, align-items, background-position, background-size, color, text-align sont déjà définis par .hero, on ne les répète pas */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/header-home-new.jpg"); /* Nouvelle image de fond pour l'accueil */
+}
+
+.hero--small .hero__title {
+    font-size: 3.5rem; /* Taille de titre ajustée pour l'accueil, un peu plus grande */
+    margin-bottom: 1.5rem;
+}
+
+.hero--small .hero__subtitle {
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin-inline: auto;
+    margin-bottom: 2.5rem; /* Plus d'espace avant les boutons */
+}
+
+.hero--small .hero__actions {
+    justify-content: center; /* Centre les boutons */
+}
+
 
 /* --- Destination Section --- */
 .destination__section {
@@ -910,8 +935,7 @@ img {
   margin-bottom: 1.5rem;
 }
 
-.footer__col--about .footer__logo img {
-  max-width: 140px; /* Plus grand logo */
+.footer__col--about .footer__logo { /* J'ai retiré le img ici car le logo est du texte */
   margin-bottom: 1.5rem;
 }
 
@@ -1094,7 +1118,7 @@ img {
     grid-column: 1 / -1; /* Take full width */
     text-align: center;
   }
-  .footer__col--about .footer__logo img {
+  .footer__col--about .footer__logo { /* J'ai ajusté ceci aussi ici */
     margin-inline: auto;
   }
   .footer__socials {
@@ -1126,42 +1150,49 @@ img {
   /* Navbar mobile */
   .navbar__header {
     width: 100%;
+    /* justify-content: space-between; This is inherited from desktop, no need to repeat unless overridden */
   }
   .navbar__logo {
-    flex-grow: 1;
-    text-align: center;
+    /* flex-grow: 1; */ /* Enlève flex-grow si vous voulez que le logo soit à gauche et non centré par rapport à l'espace libre */
+    /* text-align: center; */ /* Enlève text-align si vous voulez le logo à gauche */
+    margin-left: 1.25rem; /* Ajoute une marge à gauche pour le logo */
   }
   .navbar__menu__btn {
     display: block; /* Show burger menu */
-    order: 2;
+    order: 2; /* S'assure qu'il est à droite de la barre de titre */
+    margin-right: 1.25rem; /* Marge à droite pour le burger */
   }
-  .navbar__logo {
-    order: 1;
-  }
+  /* C'était une erreur de mettre order sur le logo et les btns ici, ils sont dans le header ou flexbox */
+  /* .navbar__logo { order: 1; } */
+  /* .navbar__btns { order: 3; } */
+
   .navbar__btns {
-    order: 3;
+    display: none; /* Cache les boutons "Contactez-nous" sur mobile dans la navbar elle-même pour faire de la place pour le menu burger */
   }
 
   .navbar__links {
     position: absolute;
-    top: var(--header-height);
+    top: var(--header-height); /* Commence juste en dessous de la navbar */
     left: 0;
     width: 100%;
-    flex-direction: column;
+    flex-direction: column; /* Empile les liens verticalement */
     background-color: var(--color-white);
     box-shadow: var(--shadow-medium);
-    transform: translateY(-100%); /* Hidden by default */
-    transition: transform 0.3s ease-in-out;
-    padding: 1.5rem 1.25rem;
+    transform: translateY(-100%); /* Masque le menu en le déplaçant vers le haut hors de vue */
+    transition: transform 0.3s ease-in-out; /* Animation douce */
+    padding: 1.5rem 1.25rem; /* Padding interne */
     text-align: center;
     gap: 1rem;
+    overflow-y: auto; /* Permet le défilement si beaucoup de liens */
+    max-height: calc(100vh - var(--header-height)); /* Empêche le menu de dépasser l'écran */
   }
 
   .navbar__links.open {
-    transform: translateY(0); /* Show menu */
+    transform: translateY(0); /* Affiche le menu en le faisant descendre */
   }
   .navbar__links a {
     font-size: 1.1rem; /* Larger font for mobile links */
+    padding: 0.75rem 0; /* Plus de padding pour faciliter le clic */
   }
   .navbar__links a::after { /* Hide underline on mobile menu */
     display: none;
@@ -1405,7 +1436,7 @@ img {
         font-size: 0.9rem;
     }
     .service__card .card__img {
-        height: 340px; /* Plus petite sur mobile */
+        height: 340px; /* Laisser la même hauteur pour service cards si ok */
     }
 }
 
