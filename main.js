@@ -105,49 +105,49 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //formulaire de contact mail
-document.addEventListener('DOMContentLoaded', function() {
-  const contactForm = document.getElementById('contact-form');
+// document.addEventListener('DOMContentLoaded', function() {
+//   const contactForm = document.getElementById('contact-form');
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(event) {
-      event.preventDefault(); // Empêche le rechargement de la page par défaut
+//   if (contactForm) {
+//     contactForm.addEventListener('submit', function(event) {
+//       event.preventDefault(); // Empêche le rechargement de la page par défaut
 
-      // Récupérer les données du formulaire
-      const formData = new FormData(contactForm);
-      const data = Object.fromEntries(formData.entries());
+//       // Récupérer les données du formulaire
+//       const formData = new FormData(contactForm);
+//       const data = Object.fromEntries(formData.entries());
 
-      // Afficher un message de chargement (optionnel)
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      submitBtn.textContent = "Envoi en cours...";
-      submitBtn.disabled = true;
+//       // Afficher un message de chargement (optionnel)
+//       const submitBtn = contactForm.querySelector('button[type="submit"]');
+//       submitBtn.textContent = "Envoi en cours...";
+//       submitBtn.disabled = true;
 
-      // Envoi des données au script PHP côté serveur
-      fetch('send_email.php', { // Remplacer 'send_email.php' par le nom de votre script
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
-        .then(response => response.json())
-        .then(result => {
-          // Gérer la réponse du serveur
-          if (result.success) {
-            alert('Votre demande de voyage a été envoyée avec succès !');
-            contactForm.reset(); // Réinitialise le formulaire
-          } else {
-            alert('Une erreur est survenue lors de l\'envoi du message : ' + result.message);
-          }
-        })
-        .catch(error => {
-          console.error('Erreur:', error);
-          alert('Une erreur de connexion est survenue. Veuillez réessayer plus tard.');
-        })
-        .finally(() => {
-          // Rétablir le bouton de soumission
-          submitBtn.textContent = "Envoyer la demande";
-          submitBtn.disabled = false;
-        });
-    });
-  }
-});
+//       // Envoi des données au script PHP côté serveur
+//       fetch('send_email.php', { // Remplacer 'send_email.php' par le nom de votre script
+//           method: 'POST',
+//           headers: {
+//             'Content-Type': 'application/json',
+//           },
+//           body: JSON.stringify(data),
+//         })
+//         .then(response => response.json())
+//         .then(result => {
+//           // Gérer la réponse du serveur
+//           if (result.success) {
+//             alert('Votre demande de voyage a été envoyée avec succès !');
+//             contactForm.reset(); // Réinitialise le formulaire
+//           } else {
+//             alert('Une erreur est survenue lors de l\'envoi du message : ' + result.message);
+//           }
+//         })
+//         .catch(error => {
+//           console.error('Erreur:', error);
+//           alert('Une erreur de connexion est survenue. Veuillez réessayer plus tard.');
+//         })
+//         .finally(() => {
+//           // Rétablir le bouton de soumission
+//           submitBtn.textContent = "Envoyer la demande";
+//           submitBtn.disabled = false;
+//         });
+//     });
+//   }
+// });
