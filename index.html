@@ -407,48 +407,49 @@
 
         <div class="contact__form-area">
           <h3 class="form__title">Planifiez votre voyage</h3>
-          <form class="contact__form">
-            <div class="form__group">
-              <label for="full_name">Nom complet *</label>
-              <input type="text" id="full_name" placeholder="Votre nom" required />
+          
+        <form class="contact__form" id="contact-form">
+          <div class="form__group">
+            <label for="full_name">Nom complet *</label>
+            <input type="text" id="full_name" name="full_name" placeholder="Votre nom" required />
+          </div>
+          <div class="form__group">
+            <label for="phone">Téléphone *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+243 XXX XXX XXX" required />
+          </div>
+          <div class="form__group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" />
+          </div>
+          <div class="form__group form__group--two-cols">
+            <div class="form__sub-group">
+              <label for="trip_type">Type de voyage *</label>
+              <select id="trip_type" name="trip_type" required>
+                <option value="">Choisissez...</option>
+                <option value="visa">Visa Touristique</option>
+                <option value="tourism">Visa d'Etudes</option>
+                <option value="business">Visa d'Affaires</option>
+                <option value="work">Visa de Travail</option>
+                <option value="family">Regroupement Familial et Autres</option>
+              </select>
             </div>
-            <div class="form__group">
-              <label for="phone">Téléphone *</label>
-              <input type="tel" id="phone" placeholder="+243 XXX XXX XXX" required />
+            <div class="form__sub-group">
+              <label for="desired_date">Date souhaitée</label>
+              <input type="date" id="desired_date" name="desired_date" />
             </div>
-            <div class="form__group">
-              <label for="email">Email</label>
-              <input type="email" id="email" placeholder="votre@email.com" />
+          </div>
+          <div class="form__group form__group--two-cols">
+            <div class="form__sub-group">
+              <label for="num_travelers">Nombre de voyageurs</label>
+              <input type="number" id="num_travelers" name="num_travelers" placeholder="Nombre..." min="1" />
             </div>
-            <div class="form__group form__group--two-cols">
-                <div class="form__sub-group">
-                    <label for="trip_type">Type de voyage *</label>
-                    <select id="trip_type" required>
-                        <option value="">Choisissez...</option>
-                        <option value="visa">Visa Touristique</option>
-                        <option value="tourism">Visa d'Etudes</option>
-                        <option value="business">Visa d'Affaires</option>
-                        <option value="other">Visa de Travail</option>
-                        <option value="other">Regroupement Familial et AUtres</option>
-                    </select>
-                </div>
-                <div class="form__sub-group">
-                    <label for="desired_date">Date souhaitée</label>
-                    <input type="date" id="desired_date" />
-                </div>
-            </div>
-            <div class="form__group form__group--two-cols">
-                <div class="form__sub-group">
-                    <label for="num_travelers">Nombre de voyageurs</label>
-                    <input type="number" id="num_travelers" placeholder="Nombre..." min="1" />
-                </div>
-            </div>
-            <div class="form__group">
-              <label for="description">Description de votre voyage</label>
-              <textarea id="description" rows="5" placeholder="Décrivez votre vision, vos besoins spécifiques, les destinations souhaitées..."></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary btn--full-width">Envoyer la demande</button>
-          </form>
+          </div>
+          <div class="form__group">
+            <label for="description">Description de votre voyage</label>
+            <textarea id="description" name="description" rows="5" placeholder="Décrivez votre vision, vos besoins spécifiques, les destinations souhaitées..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full-width">Envoyer la demande</button>
+        </form>
 
           <div class="reservation-process">
             <h4 class="process__title">Processus de réservation</h4>
