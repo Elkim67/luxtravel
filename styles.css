@@ -335,7 +335,7 @@ img {
   min-height: calc(100vh - var(--header-height)); /* Prend la hauteur restante de l'écran */
   display: flex;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("assets/contact_banner1.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("assets/header.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
